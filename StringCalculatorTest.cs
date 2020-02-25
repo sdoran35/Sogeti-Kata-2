@@ -9,32 +9,32 @@ namespace StringCalculator
         [Fact]
         public void GivenEmptyStringReturnZero()
         {
-            string.Empty.ShouldCalculateTo(0);
+            string.Empty.CalculateTo(0);
 
         }
 
         [Fact]
         public void GivenSingleNumberReturnNumber()
         {
-            "1".ShouldCalculateTo(1);
+            "1".CalculateTo(1);
         }
 
         [Fact]
         public void GivenTwoNumbersReturnSumOfBothNumbers()
         {
-            "1,2".ShouldCalculateTo(3);
+            "1,2".CalculateTo(3);
         }
 
         [Fact]
         public void GivenMultipleNumbersReturnSum()
         {
-            "1,2,3".ShouldCalculateTo(6);
+            "1,2,3".CalculateTo(6);
         }
 
         [Fact]
         public void GivenNewLineDelimReturnSum()
         {
-            "1\n2\n3".ShouldCalculateTo(6);
+            "1\n2\n3".CalculateTo(6);
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace StringCalculator
         [Fact]
         public void GivenCustomDelimReturnSum()
         {
-            "//;\n1;2".ShouldCalculateTo(3);
+            "//;\n1;2".CalculateTo(3);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace StringCalculator
         [Fact]
         public void IgnoreNumbersGreaterThan1000()
         {
-            "1001,2".ShouldCalculateTo(2);
+            "1001,2".CalculateTo(2);
             
         }
 
@@ -74,7 +74,7 @@ namespace StringCalculator
 
     internal static class TestHelper
     {
-        public static void ShouldCalculateTo(this string input, int expected)
+        public static void CalculateTo(this string input, int expected)
         {
             var item = new StringCalculator();
             Assert.Equal(expected,StringCalculator.Add(input));
